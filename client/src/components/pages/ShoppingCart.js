@@ -9,7 +9,7 @@ import { loadStripe } from '@stripe/stripe-js';
 
 export default function ShoppingCart() {
 
-  const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+  const stripePromise = loadStripe(process.env.REACT_APP_STRIPE);
 
   const [state] = useStoreContext();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
